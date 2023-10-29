@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsWise.Domain", "MetricsWise.Domain\MetricsWise.Domain.csproj", "{94DD46EC-F8CC-4C5B-A06A-54B265DDE168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsWise.Application", "MetricsWise.Application\MetricsWise.Application.csproj", "{66EA3D10-BF44-40F4-A617-B6854DD4CBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsWise.Infra.IoC", "MetricsWise.Infra.IoC\MetricsWise.Infra.IoC.csproj", "{B653A15A-7867-4B75-A9B5-7EB3A0B7505D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsWise.Infra.Data", "MetricsWise.Infra.Data\MetricsWise.Infra.Data.csproj", "{25B44750-F349-438D-BDC7-59736E1DC2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsWise.MVC", "MetricsWise.MVC\MetricsWise.MVC.csproj", "{B0BCC8E3-7B30-40B2-974B-880AF3D0AB64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94DD46EC-F8CC-4C5B-A06A-54B265DDE168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DD46EC-F8CC-4C5B-A06A-54B265DDE168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DD46EC-F8CC-4C5B-A06A-54B265DDE168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DD46EC-F8CC-4C5B-A06A-54B265DDE168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EA3D10-BF44-40F4-A617-B6854DD4CBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EA3D10-BF44-40F4-A617-B6854DD4CBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EA3D10-BF44-40F4-A617-B6854DD4CBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EA3D10-BF44-40F4-A617-B6854DD4CBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B653A15A-7867-4B75-A9B5-7EB3A0B7505D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B653A15A-7867-4B75-A9B5-7EB3A0B7505D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B653A15A-7867-4B75-A9B5-7EB3A0B7505D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B653A15A-7867-4B75-A9B5-7EB3A0B7505D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B44750-F349-438D-BDC7-59736E1DC2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B44750-F349-438D-BDC7-59736E1DC2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B44750-F349-438D-BDC7-59736E1DC2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B44750-F349-438D-BDC7-59736E1DC2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BCC8E3-7B30-40B2-974B-880AF3D0AB64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BCC8E3-7B30-40B2-974B-880AF3D0AB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BCC8E3-7B30-40B2-974B-880AF3D0AB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BCC8E3-7B30-40B2-974B-880AF3D0AB64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80EA30FB-8CB1-4A07-9DA5-D88DB99080E2}
+	EndGlobalSection
+EndGlobal
