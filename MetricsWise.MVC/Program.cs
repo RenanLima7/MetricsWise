@@ -1,5 +1,5 @@
-using MetricsWise.MVC.Data;
-using Microsoft.AspNetCore.Identity;
+using MetricsWise.Infra.Data;
+using MetricsWise.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace MetricsWise.MVC
@@ -8,21 +8,60 @@ namespace MetricsWise.MVC
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+            string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-            // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+            try
+            {
+                Console.WriteLine("Starting Web Builder!");
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                var builder = WebApplication.CreateBuilder(args);
+
+                AddServices(builder);
+
+                Console.WriteLine("Starting MetricsWise!");
+
+                var app = builder.Build();
+
+                AddAppConfiguration(app);
+
+                app.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Catastrophic Error!" + ex);
+                throw;
+            }
+            finally
+            {
+                Console.WriteLine($"Server Is Enable in - {environment}");
+            }
+        }
+
+        private static void AddServices(WebApplicationBuilder builder)
+        {
+            builder.Services.AddControllers();
+
+            builder.Services.AddEntityFramework(builder.Configuration);
+
             builder.Services.AddRazorPages();
 
-            var app = builder.Build();
+            //builder.Services.AddDependencyInjectionConfiguration();
 
-            // Configure the HTTP request pipeline.
+            //builder.Services.AddJwtTConfiguration(builder.Configuration);
+
+            //builder.Services.AddFluentValidationConfiguration();
+
+            //builder.Services.AddEndpointsApiExplorer();
+
+            //builder.Services.AddSwaggerConfiguration();
+
+            //builder.Services.AddAutoMapperConfiguration();
+
+            //builder.Services.AddCors();
+        }
+
+        private static void AddAppConfiguration(WebApplication app)
+        {
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -34,17 +73,27 @@ namespace MetricsWise.MVC
                 app.UseHsts();
             }
 
+            app.UseEntityFramework();
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.MapRazorPages();
 
-            app.Run();
+            //app.UseJwtConfiguration();
+
+            //app.MapControllers();
+
+            //app.UseCors();
+
+            //app.UseSwaggerConfiguration();
         }
     }
 }

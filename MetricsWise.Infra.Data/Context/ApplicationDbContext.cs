@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace MetricsWise.MVC.Data
+namespace MetricsWise.Infra.Data.Context
 {
     public class ApplicationDbContext : IdentityDbContext
     {
