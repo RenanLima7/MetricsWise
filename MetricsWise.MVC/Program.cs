@@ -1,6 +1,4 @@
-using MetricsWise.Infra.Data;
-using MetricsWise.Infra.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using MetricsWise.Infra.IoC;
 
 namespace MetricsWise.MVC
 {
