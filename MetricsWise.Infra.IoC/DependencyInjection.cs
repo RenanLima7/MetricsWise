@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MetricsWise.Infra.Data
+namespace MetricsWise.Infra.IoC
 {
     public static class DependencyInjection
     {
@@ -31,8 +31,8 @@ namespace MetricsWise.Infra.Data
 
             try
             {
-               using var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
-                
+                using var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
+
                 context.Database.Migrate();
                 context.Database.EnsureCreated();
             }
